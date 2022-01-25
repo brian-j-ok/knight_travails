@@ -14,9 +14,6 @@ class Knight
     MOVES.each do |move|
       x_move = position[0] + move[0]
       y_move = position[1] + move[1]
-      if within_boundary?(x_move, y_move)
-        puts "#{x_move}, #{y_move}"
-      end
       @children << [x_move, y_move] if within_boundary?(x_move, y_move)
     end
   end

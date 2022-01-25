@@ -18,13 +18,16 @@ class Game
       queue.delete_at(0)
     end
 
-    until current_node.nil?
+    current_node = queue[0]
+
+    loop do
       history << current_node.position
       current_node = current_node.parent
+      break if current_node.nil?
     end
 
     history.reverse
   end
 end
 
-game = Game.new([0, 0], [3, 3])
+game = Game.new([0, 0], [6, 6])
